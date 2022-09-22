@@ -1,5 +1,24 @@
 package com.multi.dto;
 
-public class ItemDTO {
+import java.util.Date;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
+public class ItemDTO {
+	private int itemid;
+	private int cateid;
+	private String pname;
+	private String info;
+	private int price;
+	private Date mdate;
+	private String checkstatus;
 }
