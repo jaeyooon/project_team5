@@ -10,15 +10,20 @@ import lombok.ToString;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
 @Setter
+@Getter
 @ToString
-public class ItemDTO {
+public class OrdertblDTO {
+	private int orderid;
 	private int itemid;
-	private int cateid;
-	private String pname;
-	private String info;
-	private int price;
-	private Date mdate;
-	private String checkstatus;
+	private String custid;
+	private String rname;
+	private int phonenum;
+	private String addr;
+	private String odate;
+	private int count;
+	private int money;
+	private int coupon;
+	private String pay;
+	
 }
