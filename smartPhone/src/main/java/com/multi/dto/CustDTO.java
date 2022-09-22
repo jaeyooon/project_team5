@@ -13,7 +13,7 @@ import lombok.ToString;
 @Setter
 @Getter
 @ToString
-public class CustDTO {
+public class CustDTO { // CustDTO
 	private String custid;
 	private int addrid;
 	private String pwd;
