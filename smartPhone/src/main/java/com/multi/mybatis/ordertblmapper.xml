@@ -1,1 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.multi.mapper.OrdertblMapper">
+
+	<select id="select" parameterType="Integer" resultType="OrdertblDTO">
+		SELECT * FROM OrdertblDTO WHERE id=#{id}
+	</select>
+	<select id="selectall" resultType="OrdertblDTO">
+		SELECT * FROM OrdertblDTO
+	</select>
+	<insert id="insert" parameterType="OrdertblDTO">
+		INSERT INTO item VALUES
+		(NULL,#{itemid},#{custid},#{rname},#{phonenum},#{addr},#{odate},#{count},#{money},#{coupon},#{pay})
+	</insert>
+	<update id="update" parameterType="OrdertblDTO">
+		UPDATE OrdertblDTO SET
+		rname=#{rname},money=#{money} WHERE id=#{id}
+	</update>
+	<delete id="delete" parameterType="Integer">
+		DELETE FROM OrdertblDTO WHERE
+		id=#{id}
+	</delete>
+
+</mapper>
