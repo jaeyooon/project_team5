@@ -1,4 +1,4 @@
-package com.multi.ordertbls;
+package com.multi.ordertbl;
 
 public class GetOrdertbl {
 

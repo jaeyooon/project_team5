@@ -1,4 +1,4 @@
-package com.multi.items;
+package com.multi.item;
 
 public class GetAllItem {
 

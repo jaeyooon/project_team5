@@ -1,4 +1,4 @@
-package com.multi.custs;
+package com.multi.cust;
 
 public class UpdateCust {
 
