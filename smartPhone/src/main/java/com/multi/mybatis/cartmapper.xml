@@ -30,8 +30,8 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		ca.cnt, cu.name as cust_name, it.pname as item_pname,
 		it.price as item_price FROM cart ca
 		INNER JOIN cust cu ON ca.custid = cu.custid
-		INNER JOIN item it ON ca.itemid = it.itemid;
-		WHERE ca.cartid = #{cart_id}
+		INNER JOIN item it ON ca.itemid = it.itemid
+		WHERE ca.cartid = #{cartid}
 	</select>
 	
 </mapper>
