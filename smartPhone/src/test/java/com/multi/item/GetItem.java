@@ -15,7 +15,7 @@ public class GetItem {
 		ItemDTO item = null;
 		
 		try {
-			item  = this.service.get(null);
+			item  = this.service.get(111);
 		} catch(Exception var3) {
 			var3.printStackTrace();
 		}

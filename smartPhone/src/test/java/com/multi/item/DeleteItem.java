@@ -12,7 +12,7 @@ public class DeleteItem {
 	
 	void contextLoads() {
 		try {
-			service.remove(null);
+			service.remove(111);
 		} catch (Exception var2) {
 			var2.printStackTrace();
 		}
