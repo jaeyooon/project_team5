@@ -14,7 +14,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		INSERT INTO item VALUES (#{itemid},#{cateid},#{pname},#{info},#{price},#{mdate},#{checkstatus})
 	</insert>
 	<update id="update" parameterType="itemDTO">
-		UPDATE item SET name=#{itemid},#{cateid},#{pname},#{info},#{price},#{mdate},#{checkstatus} WHERE itemid=#{itemid}
+		UPDATE item SET pname=#{pname} WHERE itemid=#{itemid}
 	</update>
 	<delete id="delete" parameterType="Integer">
 		DELETE FROM item WHERE itemid=#{itemid}
