@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.multi.mapper.CartMapper">
+	
+	<select id="select" parameterType="Integer" resultType="CartDTO">
+		SELECT ca.cartid, cu.custid as cust_id, it.itemid as item_id,
+		ca.cnt, cu.name as cust_name, it.pname as item_pname,
+		it.price as item_price FROM cart ca
+		INNER JOIN cust cu ON ca.custid = cu.custid
+		INNER JOIN item it ON ca.itemid = it.itemid
+		WHERE ca.cartid = #{cartid}
+	</select>
+	<select id="selectall" resultType="CartDTO">
+		SELECT * FROM cart
+	</select>
+	<insert id="insert" parameterType="CartDTO">
+		INSERT INTO cart VALUES (#{cartid}, #{cust_id}, #{item_id}, #{cnt})
+	</insert>
+	<update id="update" parameterType="CartDTO">
+		UPDATE cart SET custid =#{cust_id}, itemid =#{item_id}, cnt=#{cnt} WHERE cartid = #{cartid}
+	</update>
+	<delete id="delete" parameterType="Integer">
+		DELETE FROM cart WHERE cartid = #{cartid}
+	</delete>
+	
+	<select id="cartall" parameterType="Integer" resultType="CartDTO">
+		SELECT ca.cartid, cu.custid as cust_id, it.itemid as item_id,
+		ca.cnt, cu.name as cust_name, it.pname as item_pname,
+		it.price as item_price FROM cart ca
+		INNER JOIN cust cu ON ca.custid = cu.custid
+		INNER JOIN item it ON ca.itemid = it.itemid;
+		WHERE ca.cartid = #{cart_id}
+	</select>
+	
+</mapper>

@@ -1,5 +1,23 @@
 package com.multi.cart;
 
-public class DeleteCart {
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
+import com.multi.service.CartService;
+
+@SpringBootTest
+class DeleteCart {
+	
+	@Autowired
+	CartService service;
+	
+	@Test
+	void contextLoads() {
+		try {
+			service.remove(23);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }
