@@ -13,7 +13,11 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		WHERE ca.cartid = #{cartid}
 	</select>
 	<select id="selectall" resultType="CartDTO">
-		SELECT * FROM cart
+		SELECT ca.cartid, cu.custid as cust_id, it.itemid as item_id,
+		ca.cnt, cu.name as cust_name, it.pname as item_pname,
+		it.price as item_price FROM cart ca
+		INNER JOIN cust cu ON ca.custid = cu.custid
+		INNER JOIN item it ON ca.itemid = it.itemid
 	</select>
 	<insert id="insert" parameterType="CartDTO">
 		INSERT INTO cart VALUES (#{cartid}, #{cust_id}, #{item_id}, #{cnt})
@@ -25,13 +29,5 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		DELETE FROM cart WHERE cartid = #{cartid}
 	</delete>
 	
-	<select id="cartall" parameterType="Integer" resultType="CartDTO">
-		SELECT ca.cartid, cu.custid as cust_id, it.itemid as item_id,
-		ca.cnt, cu.name as cust_name, it.pname as item_pname,
-		it.price as item_price FROM cart ca
-		INNER JOIN cust cu ON ca.custid = cu.custid
-		INNER JOIN item it ON ca.itemid = it.itemid
-		WHERE ca.cartid = #{cartid}
-	</select>
 	
 </mapper>
