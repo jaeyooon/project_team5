@@ -5,22 +5,20 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 <mapper namespace="com.multi.mapper.OrdertblMapper">
 
 	<select id="select" parameterType="Integer" resultType="OrdertblDTO">
-		SELECT * FROM OrdertblDTO WHERE id=#{id}
+		SELECT * FROM ordertbl WHERE orderid=#{orderid}
 	</select>
 	<select id="selectall" resultType="OrdertblDTO">
-		SELECT * FROM OrdertblDTO
+		SELECT * FROM ordertbl
 	</select>
 	<insert id="insert" parameterType="OrdertblDTO">
-		INSERT INTO item VALUES
-		(NULL,#{itemid},#{custid},#{rname},#{phonenum},#{addr},#{odate},#{count},#{money},#{coupon},#{pay})
+		INSERT INTO ordertbl VALUES
+		(NULL, #{itemid}, #{custid}, #{rname}, #{phonenum}, #{addr}, #{odate}, #{count}, #{money}, #{coupon}, #{pay})
 	</insert>
 	<update id="update" parameterType="OrdertblDTO">
-		UPDATE OrdertblDTO SET
-		rname=#{rname},money=#{money} WHERE id=#{id}
+		UPDATE ordertbl SET rname=#{rname}, money=#{money} WHERE orderid=#{orderid}
 	</update>
 	<delete id="delete" parameterType="Integer">
-		DELETE FROM OrdertblDTO WHERE
-		id=#{id}
+		DELETE FROM ordertbl WHERE orderid=#{orderid}
 	</delete>
 
 </mapper>
