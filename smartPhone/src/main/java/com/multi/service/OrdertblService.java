@@ -32,7 +32,7 @@ public class OrdertblService implements MyService<Integer, OrdertblDTO> {
 
 	@Override
 	public OrdertblDTO get(Integer k) throws Exception {
-		return null;
+		return mapper.select(k);
 	}
 
 	@Override
